@@ -1,20 +1,24 @@
 package com.material.service.calculator
 
+import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.google.android.material.color.DynamicColors
 import com.material.service.calculator.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.calculateButton.setOnClickListener {
@@ -25,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             handleKeyEvent(view,i)
         }
     }
+
     private fun calculateTip() {
         val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
