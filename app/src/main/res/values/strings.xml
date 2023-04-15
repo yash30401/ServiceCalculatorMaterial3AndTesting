@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Service Calculator Material3</string>
+    <string name="tip_amount">Tip Amount: %s</string>
 </resources>
