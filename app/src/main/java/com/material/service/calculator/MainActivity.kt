@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Calculating Tip Percentage
     private fun calculateTip() {
         val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         var tip = tipPercentage * cost
         val roundUp = binding.roundUpSwitch.isChecked
         if (roundUp) {
+            //Rounding Up using Funtion Math.ciel()
             tip = kotlin.math.ceil(tip)
 
         }
@@ -55,11 +57,13 @@ class MainActivity : AppCompatActivity() {
         showResult(tip)
     }
 
+    //Showing Formatted Result and current sign using .getCurrentInstance()
     private fun showResult(tip:Double) {
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
 
+    //Hiding Soft Keyboard after Pressing enter
     private fun handleKeyEvent(view: View, i: Int):Boolean {
         if(i==KeyEvent.KEYCODE_ENTER){
             val inputMethodManager =
