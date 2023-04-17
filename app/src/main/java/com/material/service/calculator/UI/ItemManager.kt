@@ -1,4 +1,4 @@
-package com.material.service.calculator
+package com.material.service.calculator.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

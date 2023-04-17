@@ -1,4 +1,4 @@
-package com.material.service.calculator
+package com.material.service.calculator.other
 
 import android.app.Application
 import com.google.android.material.color.DynamicColors

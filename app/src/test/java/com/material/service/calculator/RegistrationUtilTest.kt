@@ -2,6 +2,7 @@ package com.material.service.calculator
 
 
 import com.google.common.truth.Truth.assertThat
+import com.material.service.calculator.Testing.RegistrationUtil
 import org.junit.Test
 
 class RegistrationUtilTest{

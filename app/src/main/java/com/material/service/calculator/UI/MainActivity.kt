@@ -1,6 +1,5 @@
-package com.material.service.calculator
+package com.material.service.calculator.UI
 
-import android.app.Application
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +7,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.google.android.material.color.DynamicColors
+import com.material.service.calculator.R
 import com.material.service.calculator.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnItemManager.setOnClickListener {
-            val intent = Intent(this@MainActivity,ItemManager::class.java)
+            val intent = Intent(this@MainActivity, ItemManager::class.java)
             startActivity(intent)
         }
     }

@@ -3,13 +3,14 @@ package com.material.service.calculator
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import com.google.common.truth.Truth.assertThat
+import com.material.service.calculator.Testing.ResourceComparer
 import org.junit.Before
 
 import org.junit.Test
 
 class ResourceComparerTest{
 
-    private lateinit var resourceComparer:ResourceComparer
+    private lateinit var resourceComparer: ResourceComparer
 
     @Before
     fun setup(){
