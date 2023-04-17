@@ -13,6 +13,7 @@ class RegistrationUtilTest{
             "Hello",
             "Hello"
         )
+
         assertThat(result).isFalse()
     }
 
