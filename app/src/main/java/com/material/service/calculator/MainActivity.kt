@@ -2,6 +2,7 @@ package com.material.service.calculator
 
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.costOfServiceEditText.setOnKeyListener { view, i, keyEvent ->
             handleKeyEvent(view,i)
+        }
+
+        binding.btnItemManager.setOnClickListener {
+            val intent = Intent(this@MainActivity,ItemManager::class.java)
+            startActivity(intent)
         }
     }
 
