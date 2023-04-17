@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ItemManager::class.java)
             startActivity(intent)
         }
+
+
     }
 
     //Calculating Tip Percentage
@@ -61,6 +64,8 @@ class MainActivity : AppCompatActivity() {
 
         showResult(tip)
     }
+
+
 
     //Showing Formatted Result and current sign using .getCurrentInstance()
     private fun showResult(tip:Double) {
