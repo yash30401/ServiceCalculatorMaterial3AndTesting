@@ -46,7 +46,7 @@ class ShoppingDaoTest {
 
     @Test
     fun insertShoppingItem() = runBlockingTest {
-        val shoppingItem = ShoppingItem("Banana",3,10f,"url",id=1)
+        val shoppingItem = ShoppingItem("Banana", 3, 10f, "url", id = 1)
         dao.insertShoppingItem(shoppingItem)
 
         val allShoppingItems = dao.observeAllShoppingItem().asLiveData().getOrAwaitValue()
@@ -57,14 +57,29 @@ class ShoppingDaoTest {
 
 
     @Test
-    fun deleteShoppingItem() =runBlockingTest {
-        val shoppingItem = ShoppingItem("Banana",3,10f,"url",id=1)
+    fun deleteShoppingItem() = runBlockingTest {
+        val shoppingItem = ShoppingItem("Banana", 3, 10f, "url", id = 1)
         dao.insertShoppingItem(shoppingItem)
         dao.deleteShoppingItem(shoppingItem)
 
         val allShoppingItems = dao.observeAllShoppingItem().asLiveData().getOrAwaitValue()
 
         assertThat(allShoppingItems).doesNotContain(shoppingItem)
+    }
+
+    @Test
+    fun observeTotalPriceSum() = runBlockingTest {
+        val shoppingItem = ShoppingItem("Banana", 3, 10f, "url", id = 1)
+        val shoppingItem2 = ShoppingItem("Apple2", 2, 20f, "url", id = 2)
+        val shoppingItem3 = ShoppingItem("Banana", 5, 40f, "url", id = 3)
+
+        dao.insertShoppingItem(shoppingItem)
+        dao.insertShoppingItem(shoppingItem2)
+        dao.insertShoppingItem(shoppingItem3)
+
+        val totalPrice = dao.observeTotalPrice().asLiveData().getOrAwaitValue()
+
+        assertThat(totalPrice).isEqualTo(3*10f+2*20f+5*40f)
     }
 
 }
