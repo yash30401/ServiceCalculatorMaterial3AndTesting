@@ -3,19 +3,25 @@ package com.material.service.calculator.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth.assertThat
+import com.material.service.calculator.MainCoroutineRule
 import com.material.service.calculator.getOrAwaitValueTest
 import com.material.service.calculator.other.Constants
 import com.material.service.calculator.other.NetworkResult
 import com.material.service.calculator.repositories.FakeShoppingRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+@ExperimentalCoroutinesApi
 class ShoppingViewModelTest{
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @get:Rule
+    var mainCoroutineRule = MainCoroutineRule()
 
     private lateinit var viewModel: ShoppingViewModel
     @Before
