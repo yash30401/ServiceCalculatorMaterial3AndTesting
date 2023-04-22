@@ -29,7 +29,7 @@ class ShoppingViewModelTest{
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValueTest()
 
-        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",""))
+        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",null))
     }
 
     @Test
