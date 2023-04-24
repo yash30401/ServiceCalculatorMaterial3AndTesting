@@ -31,4 +31,29 @@ class HomeworkTest{
         assertThat(result).isFalse()
     }
 
+    @Test
+    fun `empty string returns true`(){
+        var result = Homework.isPalidrome("")
+
+        assertThat(result).isTrue()
+    }
+
+    @Test
+    fun `unmatched string return false`(){
+        var result = Homework.isPalidrome(
+            "Hello"
+        )
+
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `matched string return true`(){
+        var result  = Homework.isPalidrome(
+            "nitin"
+        )
+
+        assertThat(result).isTrue()
+    }
+
 }

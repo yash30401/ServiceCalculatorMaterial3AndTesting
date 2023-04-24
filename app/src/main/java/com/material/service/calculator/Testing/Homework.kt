@@ -14,4 +14,15 @@ object Homework {
         return braces.count{ it=='('} == braces.count { it==')' }
     }
 
+    /*
+    * Checking if the string is palindrome or not
+    * ...empty string
+    * ...unmatched string
+    * ...matched string
+     */
+    fun isPalidrome(str:String):Boolean{
+        var str2 = str.reversed()
+
+        return str2==str
+    }
 }
