@@ -50,7 +50,7 @@ class ShoppingViewModel(private val repository: ShoppingRepositoryInterface) : V
         }
 
         if (priceString.length > Constants.MAX_PRICE_LENGTH) {
-            _insertShoppingItemStatus.postValue(Event(NetworkResult.Error("", null)))
+            _insertShoppingItemStatus.postValue(Event(NetworkResult.Error("Price To High", null)))
             return
         }
 

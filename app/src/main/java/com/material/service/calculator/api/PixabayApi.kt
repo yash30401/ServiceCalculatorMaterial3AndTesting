@@ -8,6 +8,7 @@ import retrofit2.http.Query
 
 interface PixabayApi {
 
+    //Getting Images From Pixabay Api
     @GET("/api/")
     fun searchForImage(
         @Query("q") searchQuery:String,

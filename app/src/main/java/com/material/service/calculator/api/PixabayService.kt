@@ -5,6 +5,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object PixabayService {
+
+    //Initiating Retrofit service
     val pixabayApi:PixabayApi
     init {
         val retrofit = Retrofit.Builder()

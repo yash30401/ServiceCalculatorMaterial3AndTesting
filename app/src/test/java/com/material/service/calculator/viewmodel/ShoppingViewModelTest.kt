@@ -49,7 +49,7 @@ class ShoppingViewModelTest{
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValueTest()
 
-        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",""))
+        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",null))
     }
 
 
@@ -64,7 +64,7 @@ class ShoppingViewModelTest{
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValueTest()
 
-        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",""))
+        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("Price To High",null))
     }
 
     @Test
@@ -74,7 +74,7 @@ class ShoppingViewModelTest{
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValueTest()
 
-        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",""))
+        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Error("",null))
     }
 
     @Test
@@ -84,6 +84,6 @@ class ShoppingViewModelTest{
 
         val value = viewModel.insertShoppingItemStatus.getOrAwaitValueTest()
 
-        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Success(""))
+        assertThat(value.getContentIfNotHandled()?.status).isEqualTo(NetworkResult.Success(null))
     }
 }
