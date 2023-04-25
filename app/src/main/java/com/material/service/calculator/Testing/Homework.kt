@@ -26,4 +26,17 @@ object Homework {
 
         return str2==str
     }
+
+    /*
+    * ...if email is empty
+    * ...if email does not contain @gmail.com
+    * ...validemail
+     */
+    fun emailValidation(email:String):Boolean{
+        if(!email.contains("@gmail.com")){
+            return false
+        }else{
+            return true
+        }
+    }
 }

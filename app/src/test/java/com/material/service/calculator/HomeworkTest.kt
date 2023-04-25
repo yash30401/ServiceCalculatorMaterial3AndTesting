@@ -56,4 +56,26 @@ class HomeworkTest{
         assertThat(result).isTrue()
     }
 
+
+    @Test
+    fun `empty email return false`(){
+        val result = Homework.emailValidation("")
+
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `email does not contain @gmail return false`(){
+        val result = Homework.emailValidation("yashveersinghgamil.com")
+
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `valid email return true`(){
+        val result = Homework.emailValidation("yashveersingh30401@gmail.com")
+
+        assertThat(result).isTrue()
+    }
+
 }
