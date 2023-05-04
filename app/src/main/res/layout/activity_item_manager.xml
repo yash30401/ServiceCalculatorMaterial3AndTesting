@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,24 +8,29 @@
     android:tag="item_manager"
     tools:context=".UI.ItemManager">
 
-    
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_addItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:tint="@color/seed"
-        android:src="@drawable/baseline_add_24"/>
+        android:src="@drawable/baseline_add_24"
+        android:contentDescription="@string/add_item_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/seed" />
 
     <TextView
         android:id="@+id/tv_totalPrice"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
-        android:layout_height="wrap_content"
+        android:text="Total Cost: 100Rs"
         android:textSize="25sp"
-        android:text="Total Cost: 100Rs" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
