@@ -12,13 +12,12 @@ class ItemManager : AppCompatActivity() {
     private var _binding:ActivityItemManagerBinding? =null
     private val binding get() = _binding!!
 
-    private lateinit var fragmentManager: FragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityItemManagerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        fragmentManager = supportFragmentManager
+
         binding.btnAddItem.setOnClickListener {
             openDialogFragment()
         }
@@ -27,7 +26,7 @@ class ItemManager : AppCompatActivity() {
 
 
     private fun openDialogFragment() {
-        fragmentManager.beginTransaction().add(R.id.item_managerLayout,AddShoppingItemFragment()).addToBackStack("item_manager").commit()
+        supportFragmentManager.beginTransaction().add(R.id.item_managerLayout,AddShoppingItemFragment()).addToBackStack("item_manager").commit()
     }
 
     override fun onDestroy() {

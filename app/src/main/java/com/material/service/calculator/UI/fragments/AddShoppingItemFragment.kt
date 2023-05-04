@@ -16,6 +16,5 @@ class AddShoppingItemFragment : Fragment(R.layout.fragment_add_shopping_item) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
     }
 }
