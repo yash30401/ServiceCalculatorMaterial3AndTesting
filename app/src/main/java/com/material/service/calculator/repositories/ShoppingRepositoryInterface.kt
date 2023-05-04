@@ -15,6 +15,5 @@ interface ShoppingRepositoryInterface {
 
     fun observeTotalPrice():Flow<Float>
 
-    suspend fun searchForImage(imageQuery:String):NetworkResult<ImageResponse>
 
 }
