@@ -23,16 +23,20 @@ class ItemManager : AppCompatActivity() {
         _binding = ActivityItemManagerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel = ViewModelProvider(this).get(ShoppingViewModel::class.java)
+
+        //Setting Up Recylerview
         setupRecylerView()
 
         binding.btnAddItem.setOnClickListener {
             openDialogFragment()
         }
 
+        //Observing Items
         viewModel.shoppingItems.observe(this, Observer {
             itemAdapter.submitList(it)
         })
 
+        //Observing Total Price
         viewModel.totalPrice.observe(this, Observer {
             binding.tvTotalPrice.text = NumberFormat.getCurrencyInstance().format(it)
         })
